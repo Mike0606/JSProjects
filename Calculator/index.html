@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Calculator</title>
+</head>
+<body class="light">
+    <div class="container light">
+        <div class="nav">
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" class="ckbx">
+                <i class="fas fa-sun fa-xl"></i>
+                <i class="fas fa-moon fa-xl"></i>                
+                
+                <div class="ball"></div>
+            </label>
+            <h2 class="light">Calculator</h2>
+        </div>
+        <div class="keys">
+            <table class="light">
+                <tr>
+                    <td colspan="4"><input type="text" id="res" class="res"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="AC" onclick="clr()"></td>
+                    <td><input type="button" value="^" onclick="add('^')"></td>
+                    <td><input type="button" value="%" onclick="add('%')"></td>
+                    <td><input type="button" value="/" onclick="add('/')"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="7" onclick="add('7')"></td>
+                    <td><input type="button" value="8" onclick="add('8')"></td>
+                    <td><input type="button" value="9" onclick="add('9')"></td>
+                    <td><input type="button" value="X" onclick="add('*')"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="4" onclick="add('4')"></td>
+                    <td><input type="button" value="5" onclick="add('5')"></td>
+                    <td><input type="button" value="6" onclick="add('6')"></td>
+                    <td><input type="button" value="+" onclick="add('+')"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="1" onclick="add('1')"></td>
+                    <td><input type="button" value="2" onclick="add('2')"></td>
+                    <td><input type="button" value="3" onclick="add('3')"></td>
+                    <td><input type="button" value="-" onclick="add('-')"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="." onclick="add('.')"></td>
+                    <td><input type="button" value="0" onclick="add('0')"></td>
+                    <td><input type="button" value="!" onclick="add('!')"></td>
+                    <td><input type="button" value="=" onclick="sol()"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+
+    // ------------------ toggle switch ---------------------------------------
+        const checkbox = document.getElementById('checkbox');
+        const containerElement = document.querySelector('.container');
+        const containerElementHeader = document.querySelector('.container h2');
+        const inputTextElement = document.querySelector('.res');
+        const inputBtnElements = document.querySelector('.keys input[type="button"]');
+
+
+
+        checkbox.addEventListener('change', ()=>{
+            document.body.classList.toggle('dark');
+            containerElement.classList.toggle('dark');
+            containerElementHeader.classList.toggle('dark');
+            inputTextElement.classList.toggle('dark');
+
+            const inputBtnElements = Array.from(document.querySelector('.keys input[type="button"]'));
+            inputBtnElements.forEach(inputBtnElement => {
+                console.log( typeof inputBtnElement);
+
+                inputBtnElement.classList.toggle('dark');
+            });
+            
+        });
+        // console.log(inputBtnElement.classList.toggle('dark'));
+    //_________________________________________________________________
+
+    //----------------------- Calculator functionality --------------------------
+
+
+
+
+
+</script> 
+</html>

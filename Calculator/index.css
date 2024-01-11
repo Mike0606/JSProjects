@@ -1,0 +1,128 @@
+
+[data-theme="light"]{
+    --color-bg: rgb(70, 157, 157);
+    --color-fg: rgba(255, 255, 255, 0.78);
+    --color-text: rgb(0, 0, 0);
+}
+
+/* [data-theme="dark"]{
+    --color-bg: rgba(154, 168, 235, 0.927);
+    --color-fg: rgb(0, 1, 1);
+    --color-text: rgb(255, 250, 250);
+} */
+
+body{
+    margin: 5rem 9rem;
+    background-color: var(--color-bg);
+    transition: 0.2s linear;
+}
+.container{
+    background-color: var(--color-fg);
+    padding: 2rem 5rem 2rem 5rem;
+    transition: 0.2s linear;
+}
+
+.container h2{
+    color: var(--color-text);
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Courier New', Courier, monospace, 'Arial Narrow Bold', sans-serif;
+    font-weight: 500;
+    text-shadow: 0.25rem 0.2rem var(--color-bg);
+    text-decoration: 0.2rem underline dashed;
+}
+
+
+/* --------------------- toggle switch for theme change ------------------- */
+
+.checkbox{
+    opacity: 0;
+    position: absolute;
+}
+.ckbx{
+    background-color: black;
+    display: flex;
+    border-radius: 50px;
+    height: 1.8rem;
+    width: 4rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem;
+    position: relative;
+}
+
+.ball{
+    height: 2rem;
+    width: 2rem;
+    background-color: rgb(88, 88, 88);
+    position: absolute;
+    border-radius: 50%;
+    top: 0.28rem;
+    left: 0.3rem;
+    transition: 0.2s linear;
+}
+
+.checkbox:checked + .ckbx .ball {
+    /* background-color: var(--color-bg); */
+    transform: translate(2.2rem);
+}
+
+.fa-moon,.fa-sun{
+    color: rgb(230, 178, 89);
+}
+
+body.dark{
+    background-color: rgb(5, 9, 25);
+}
+.container.dark{
+    background-color: rgb(0, 1, 1);
+}
+.container h2.dark{
+    color: rgb(221, 221, 221);
+    text-shadow: 0.25rem 0.2rem rgb(113, 120, 161);
+}
+
+/* ------------------------------------- keys ----------------------------------- */
+
+.keys{
+    display: flex;
+    justify-content: center;
+}
+table{
+    /* border: 0.1rem solid black; */
+    margin: 0 2rem;
+    padding: 1rem 1rem 2rem ;
+}
+input[type="button"]{
+    width: 100%;
+    padding: 2rem 4rem;
+    font-size: 2.2rem;
+    border-radius: 1rem;
+    font-family: 'Times New Roman', 'Courier New', Courier, monospace, 'Gill Sans', sans-serif, Times, serif;
+    background-color: rgba(70, 157, 157, 0.812);
+    color: rgb(18, 72, 72);
+    font-weight: bold;
+}
+/* input[type="button"].light{
+    background-color: rgba(70, 157, 157, 0.812);
+    color: rgb(18, 72, 72);
+} */
+input[type="text"]{
+    width: 90%;
+    font-size: 2.2rem;
+    padding: 1.5rem 2rem;
+    margin: 1rem 0;
+    border: none;
+    border-radius: 1rem;
+    color: rgb(18, 72, 72);
+    background-color: rgb(255, 255, 255);
+}
+.res.dark{
+    background-color: rgb(44, 43, 43);
+    color: rgb(170, 170, 170);
+}
+/* .keys input[type="button"].dark{
+    background-color: rgb(65, 125, 177);
+} */ 
+
+
