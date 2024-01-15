@@ -90,9 +90,21 @@
     //_________________________________________________________________
 
     //----------------------- Calculator functionality --------------------------
+    const calcDisplay = document.getElementById('res');
 
+    function add(val){
+        calcDisplay.value += val;
+    }
 
+    function clr(){
+        calcDisplay.value = '';
+    }
 
+    function sol(){
+        let expression = calcDisplay.value;
+        let result = eval(expression);
+        calcDisplay.value=result;
+    }
 
 
 </script> 
