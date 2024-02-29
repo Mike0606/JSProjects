@@ -27,85 +27,50 @@
                     <td colspan="4"><input type="text" id="res" class="res"></td>
                 </tr>
                 <tr>
-                    <td><input type="button" value="AC" onclick="clr()"></td>
-                    <td><input type="button" value="^" onclick="add('^')"></td>
-                    <td><input type="button" value="%" onclick="add('%')"></td>
-                    <td><input type="button" value="/" onclick="add('/')"></td>
+                    <td><input  class="sym" type="button" value="AC" onclick="clr()"></td>
+                    <td><input class="sym" type="button" value="C" onclick="pop()"></td>
+                    <td><input class="sym" type="button" value="%" onclick="push('%')"></td>
+                    <td><input class="equsym" id="equals" type="button" value="=" onclick="sol()"></td>
                 </tr>
                 <tr>
-                    <td><input type="button" value="7" onclick="add('7')"></td>
-                    <td><input type="button" value="8" onclick="add('8')"></td>
-                    <td><input type="button" value="9" onclick="add('9')"></td>
-                    <td><input type="button" value="X" onclick="add('*')"></td>
+                    <td><input type="button" value="7" onclick="push('7')"></td>
+                    <td><input type="button" value="8" onclick="push('8')"></td>
+                    <td><input type="button" value="9" onclick="push('9')"></td>
+                    <td><input class="sym" type="button" value="/" onclick="push('/')"></td>
                 </tr>
                 <tr>
-                    <td><input type="button" value="4" onclick="add('4')"></td>
-                    <td><input type="button" value="5" onclick="add('5')"></td>
-                    <td><input type="button" value="6" onclick="add('6')"></td>
-                    <td><input type="button" value="+" onclick="add('+')"></td>
+                    <td><input type="button" value="4" onclick="push('4')"></td>
+                    <td><input type="button" value="5" onclick="push('5')"></td>
+                    <td><input type="button" value="6" onclick="push('6')"></td>
+                    <td><input class="sym" type="button" value="X" onclick="push('*')"></td>
                 </tr>
                 <tr>
-                    <td><input type="button" value="1" onclick="add('1')"></td>
-                    <td><input type="button" value="2" onclick="add('2')"></td>
-                    <td><input type="button" value="3" onclick="add('3')"></td>
-                    <td><input type="button" value="-" onclick="add('-')"></td>
+                    <td><input type="button" value="1" onclick="push('1')"></td>
+                    <td><input type="button" value="2" onclick="push('2')"></td>
+                    <td><input type="button" value="3" onclick="push('3')"></td>
+                    <td><input class="sym" type="button" value="+" onclick="push('+')"></td>
                 </tr>
                 <tr>
-                    <td><input type="button" value="." onclick="add('.')"></td>
-                    <td><input type="button" value="0" onclick="add('0')"></td>
-                    <td><input type="button" value="!" onclick="add('!')"></td>
-                    <td><input type="button" value="=" onclick="sol()"></td>
+                    <td><input type="button" value="!" onclick="push('!')"></td>
+                    <td><input type="button" value="0" onclick="push('0')"></td>
+                    <td><input type="button" value="." onclick="push('.')"></td>
+                    <td><input class="sym" type="button" value="-" onclick="push('-')"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="&radic;" onclick="push('&radic;')"></td>
+                    <td> <input type="button" value="(" onclick="push('(')"> </td>
+                    <td> <input type="button" value=")" onclick="push(')')"> </td>
+                    <td><input type="button" value="^" onclick="push('^')"></td>
                 </tr>
             </table>
         </div>
     </div>
+
+    <script src="calc.js"></script>
 </body>
-
-<script type="text/javascript">
-
-    // ------------------ toggle switch ---------------------------------------
-        const checkbox = document.getElementById('checkbox');
-        const containerElement = document.querySelector('.container');
-        const containerElementHeader = document.querySelector('.container h2');
-        const inputTextElement = document.querySelector('.res');
-        const inputBtnElements = document.querySelector('.keys input[type="button"]');
-
-
-
-        checkbox.addEventListener('change', ()=>{
-            document.body.classList.toggle('dark');
-            containerElement.classList.toggle('dark');
-            containerElementHeader.classList.toggle('dark');
-            inputTextElement.classList.toggle('dark');
-
-            const inputBtnElements = Array.from(document.querySelector('.keys input[type="button"]'));
-            inputBtnElements.forEach(inputBtnElement => {
-                console.log( typeof inputBtnElement);
-
-                inputBtnElement.classList.toggle('dark');
-            });
-            
-        });
-        // console.log(inputBtnElement.classList.toggle('dark'));
-    //_________________________________________________________________
-
-    //----------------------- Calculator functionality --------------------------
-    const calcDisplay = document.getElementById('res');
-
-    function add(val){
-        calcDisplay.value += val;
-    }
-
-    function clr(){
-        calcDisplay.value = '';
-    }
-
-    function sol(){
-        let expression = calcDisplay.value;
-        let result = eval(expression);
-        calcDisplay.value=result;
-    }
-
-
-</script> 
 </html>
+
+<!-- add - to append the symbol or number to the display screen. 
+del - to clear the most recently added number or symbol. 
+sol - equals or evaluate the answer. 
+clr - all clear. empty the input String.   -->

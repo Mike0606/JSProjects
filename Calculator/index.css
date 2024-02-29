@@ -3,6 +3,9 @@
     --color-bg: rgb(70, 157, 157);
     --color-fg: rgba(255, 255, 255, 0.78);
     --color-text: rgb(0, 0, 0);
+    --color-sym: rgb(18, 72, 72);
+    --color-equsym: rgb(49, 177, 177);
+    --color-symtext: rgb(197, 246, 255);
 }
 
 /* [data-theme="dark"]{
@@ -15,6 +18,7 @@ body{
     margin: 5rem 9rem;
     background-color: var(--color-bg);
     transition: 0.2s linear;
+    user-select: none;
 }
 .container{
     background-color: var(--color-fg);
@@ -124,5 +128,14 @@ input[type="text"]{
 /* .keys input[type="button"].dark{
     background-color: rgb(65, 125, 177);
 } */ 
+
+input.sym{
+    background-color: var(--color-sym);
+    color: var(--color-symtext);
+}
+input.equsym{
+    background-color: var(--color-equsym);
+    color: var(--color-symtext);
+}
 
 
